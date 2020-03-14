@@ -58,6 +58,7 @@ def test_simulated_annealing():
     assert isinstance(features[0], np.bool_)
 
 
+# Make sure scorer is valid
 def test_sa_parameter_scorer():
     other_params = [np.array([[0, 1], [2, 3]]), np.array([0, 0])]
 
@@ -74,6 +75,7 @@ def test_sa_parameter_scorer():
         simulated_annealing(scorer, *other_params)
 
 
+# Test input types
 def test_sa_parameters():
     two_d_array = np.array([[0, 1], [2, 3]])
     three_d_array = np.array([[[0, 1], [2, 3]], [[4, 5], [6, 7]]])

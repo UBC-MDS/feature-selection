@@ -8,11 +8,13 @@ import pytest
 iris = pd.DataFrame(load_iris().data)
 
 
+# Test 1d array support
 def test_1d_array_support():
     result = variance_thresholding([1, 2, 3, 4, 5])
     assert np.array_equal(result, [0])
 
 
+# Test 2d array support
 def test_2d_array_support():
     result = variance_thresholding(
         [[1, 6, 0, 5], [1, 2, 4, 5], [1, 7, 8, 5]]
@@ -20,6 +22,7 @@ def test_2d_array_support():
     assert np.array_equal(result, [1, 2])
 
 
+# Test support for pandas dataframes as inputs
 def test_df_support():
     iris_copy = pd.DataFrame.copy(iris)
     iris_copy['fake_num'] = np.zeros(iris_copy.shape[0])
